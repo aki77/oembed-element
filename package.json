@@ -19,8 +19,7 @@
     "build": "rollup -c",
     "pretest": "npm run build",
     "test": "karma start karma.config.cjs",
-    "prepublishOnly": "npm run build",
-    "postpublish": "npm publish --ignore-scripts --@github:registry='https://npm.pkg.github.com'"
+    "prepublishOnly": "npm run build"
   },
   "prettier": "@github/prettier-config",
   "devDependencies": {
