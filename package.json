@@ -1,21 +1,22 @@
 {
-  "name": "@github/custom-element-element",
-  "version": "0.0.1",
-  "description": "Boilerplate for creating a custom element.",
-  "main": "dist/custom-element.js",
-  "module": "dist/custom-element.js",
+  "name": "@aki77/oembed-element",
+  "version": "0.1.0",
+  "description": "oEmbed web component",
+  "main": "dist/o-embed-element.js",
+  "module": "dist/o-embed-element.js",
   "type": "module",
-  "types": "dist/custom-elements.d.ts",
+  "types": "dist/o-embed-element.d.ts",
   "license": "MIT",
-  "repository": "github/custom-element-boilerplate",
+  "repository": "aki77/oembed-element",
   "files": [
     "dist"
   ],
   "scripts": {
     "clean": "rm -rf dist",
+    "compile": "tsc",
     "lint": "eslint . --ext .ts,.js",
-    "prebuild": "npm run clean && npm run lint && mkdir dist",
-    "build": "tsc",
+    "prebuild": "npm run clean && npm run lint && npm run compile",
+    "build": "rollup -c",
     "pretest": "npm run build",
     "test": "karma start karma.config.cjs",
     "prepublishOnly": "npm run build",
@@ -24,6 +25,8 @@
   "prettier": "@github/prettier-config",
   "devDependencies": {
     "@github/prettier-config": "0.0.4",
+    "@rollup/plugin-node-resolve": "^13.0.4",
+    "@types/minimatch": "^3.0.5",
     "chai": "^4.3.4",
     "eslint": "^7.25.0",
     "eslint-plugin-custom-elements": "^0.0.2",
@@ -35,6 +38,12 @@
     "karma-mocha": "^2.0.1",
     "karma-mocha-reporter": "^2.2.5",
     "mocha": "^8.3.2",
+    "rollup": "^2.56.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-polyfill-node": "^0.7.0",
     "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "minimatch": "^3.0.4"
   }
 }

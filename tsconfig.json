@@ -8,6 +8,8 @@
     "outDir": "dist",
     "removeComments": true,
     "preserveConstEnums": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
   }
 }

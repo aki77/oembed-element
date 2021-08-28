@@ -2,14 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>custom-element demo</title>
+    <title>oembed-element demo</title>
   </head>
   <body>
-    <custom-element></custom-element>
-
+    <o-embed url="https://www.youtube.com/watch?v=P_HNazfxhlU" proxy="https://cors-proxy.aki77-cloudflare.workers.dev/?%{url}"></o-embed>
+    <o-embed url="https://www.tiktok.com/@scout2015/video/6718335390845095173" proxy="https://cors-proxy.aki77-cloudflare.workers.dev/?%{url}" providers=""{\"provider_name\":\"TikTok\",\"provider_url\":\"http://www.tiktok.com/\",\"endpoints\":[{\"schemes\":[\"https://www.tiktok.com/*/video/*\"],\"url\":\"https://www.tiktok.com/oembed\"}]}""></o-embed>
     <script type="module">
       // import 'https://unpkg.com/@github/custom-element-boilerplate@latest/dist/custom-element.js'
-      import '../dist/custom-element.js'
+      import '../dist/bundle.js'
     </script>
   </body>
 </html>
