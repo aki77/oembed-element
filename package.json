@@ -1,6 +1,6 @@
 {
   "name": "@aki77/oembed-element",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "oEmbed web component",
   "main": "dist/o-embed-element.js",
   "module": "dist/o-embed-element.js",
