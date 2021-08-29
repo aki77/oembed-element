@@ -30,7 +30,13 @@ import '@aki77/oembed-element'
 
 ### Optional
 
-- providers
+- `option-query`
+
+  ```html
+  <o-embed url="..." proxy="..." option-query="maxwidth=700&maxheight=400"></o-embed>
+  ```
+
+- `providers`
 
   [Default providers](https://github.com/aki77/oembed-element/blob/main/src/default-providers.ts) are just a handful, you have hundreds to choose from.
   Say you want to extend suppport to more sites, go to https://oembed.com/providers.json, choose a provider object and pass it. Say we pick the first one, TwoThreeHQ, we will use it like this.

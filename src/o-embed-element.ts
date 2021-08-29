@@ -9,7 +9,7 @@ const findEndpoint = (url: string, providers: readonly Provider[]): string | und
 
 class OEmbedElement extends HTMLElement {
   static get observedAttributes(): string[] {
-    return ['url', 'proxy', 'providers']
+    return ['url', 'proxy', 'providers', 'option-query']
   }
 
   connectedCallback(): void {
@@ -24,7 +24,8 @@ class OEmbedElement extends HTMLElement {
     const endpoint = findEndpoint(this.url, this.providers)
     if (!endpoint) return
 
-    const apiUrl = `${endpoint}?url=${this.url}`
+    const query = this.optionQuery ? `url=${this.url}&${this.optionQuery}` : `url=${this.url}`
+    const apiUrl = `${endpoint}?${query}`
     const requestUrl = this.proxy.replace('%{url}', apiUrl)
 
     const res = await fetch(requestUrl)
@@ -67,6 +68,10 @@ class OEmbedElement extends HTMLElement {
       return DEFAULT_PROVIDERS
     }
     return JSON.parse(providers)
+  }
+
+  get optionQuery(): string | undefined {
+    return this.getAttribute('option-query') ?? undefined
   }
 }
 
